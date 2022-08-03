@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom'; // Librería react-dom
+import ReactDOM from 'react-dom/client'; // Librería react-dom
 
 import { Auth0Provider } from '@auth0/auth0-react';
 import App from './js/App';
@@ -20,7 +20,7 @@ root.render(
       clientId='67QuW9sOtNB7bXK5ofGUWyQmT1gcVLAY'
       redirectUri={window.location.origin}
     >
-     <App />
+      <App />
     </Auth0Provider>
 
   </React.StrictMode>

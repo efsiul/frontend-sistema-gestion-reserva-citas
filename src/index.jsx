@@ -10,6 +10,10 @@ import reportWebVitals from './js/reportWebVitals';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'; // Archivo CSS de Bootstrap 4
 import 'bootstrap/dist/js/bootstrap.min'; // Archivo Javascript de Bootstra
 
+import {MuiPickersUtilsProvider} from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
+import idLocal from 'date-fns/locale/es';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,7 +24,10 @@ root.render(
       clientId='67QuW9sOtNB7bXK5ofGUWyQmT1gcVLAY'
       redirectUri={window.location.origin}
     >
-      <App />
+      <MuiPickersUtilsProvider utils = {DateFnsUtils} locale = {idLocal}>
+			<App />
+		</MuiPickersUtilsProvider>
+    
     </Auth0Provider>
 
   </React.StrictMode>

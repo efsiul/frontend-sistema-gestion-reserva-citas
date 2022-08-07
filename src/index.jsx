@@ -1,35 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client'; // Librería react-dom
+import React from "react";
+import ReactDOM from "react-dom/client"; // Librería react-dom
 
-import { Auth0Provider } from '@auth0/auth0-react';
-import App from './js/App';
+import { Auth0Provider } from "@auth0/auth0-react";
+import App from "./js/App";
 
-import './css/index.css';
-import reportWebVitals from './js/reportWebVitals';
+import "./css/index.css";
+import reportWebVitals from "./js/reportWebVitals";
 
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'; // Archivo CSS de Bootstrap 4
-import 'bootstrap/dist/js/bootstrap.min'; // Archivo Javascript de Bootstra
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css"; // Archivo CSS de Bootstrap 4
+import "bootstrap/dist/js/bootstrap.min"; // Archivo Javascript de Bootstra
 
-import {MuiPickersUtilsProvider} from '@material-ui/pickers';
-import DateFnsUtils from '@date-io/date-fns';
-import idLocal from 'date-fns/locale/es';
+import { MuiPickersUtilsProvider } from "@material-ui/pickers";
+import DateFnsUtils from "@date-io/date-fns";
+import idLocal from "date-fns/locale/es";
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
- 
     <Auth0Provider
-      domain='felipecadavid.us.auth0.com'
-      clientId='67QuW9sOtNB7bXK5ofGUWyQmT1gcVLAY'
+      domain="felipecadavid.us.auth0.com"
+      clientId="67QuW9sOtNB7bXK5ofGUWyQmT1gcVLAY"
       redirectUri={window.location.origin}
     >
-      <MuiPickersUtilsProvider utils = {DateFnsUtils} locale = {idLocal}>
-			<App />
-		</MuiPickersUtilsProvider>
-    
+      <MuiPickersUtilsProvider utils={DateFnsUtils} locale={idLocal}>
+        <App />
+      </MuiPickersUtilsProvider>
     </Auth0Provider>
-
   </React.StrictMode>
 );
 
